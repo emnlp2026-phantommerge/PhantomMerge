@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-05-21T16:31:36.126904+00:00",
+  "probe_dir": "results/table3_representation",
+  "oc_bcp": {
+    "n_claims": 116,
+    "n_com": 66,
+    "n_clean": 50,
+    "owner_layer_index": 63,
+    "owner_layer_note": "P1 OC triplets extracted @ last layer (L); P3 owner-layer selection = L",
+    "com_mean_margin_evidence_only": 0.13984140445592583,
+    "com_mean_margin_final_prefix": 0.17826137688385563,
+    "clean_mean_margin_evidence_only": -0.2872602046518325,
+    "clean_mean_margin_final_prefix": -0.26910738161653786,
+    "com_mean_margin_shift": 0.03841997242792982,
+    "clean_mean_margin_shift": 0.018152823035294623,
+    "stage_stats": {
+      "margin_evidence_only": {
+        "com": {
+          "mean": 0.13984140445592583,
+          "ci_low": 0.07774444257163597,
+          "ci_high": 0.20531196345892902,
+          "n": 66
+        },
+        "clean": {
+          "mean": -0.2872602046518325,
+          "ci_low": -0.39010464743225076,
+          "ci_high": -0.19425115781101426,
+          "n": 50
+        },
+        "compare_com_vs_clean": {
+          "n_a": 66,
+          "n_b": 50,
+          "mean_a": 0.13984140445592583,
+          "mean_b": -0.2872602046518325,
+          "mean_diff_a_minus_b": 0.4271016091077583,
+          "mannwhitney_u": 2749.0,
+          "mannwhitney_p": 9.120290253952368e-10
+        }
+      },
+      "margin_after_anchor": {
+        "com": {
+          "mean": 0.17159602968233748,
+          "ci_low": 0.10378856170654256,
+          "ci_high": 0.24407767026844213,
+          "n": 66
+        },
+        "clean": {
+          "mean": -0.20522927130912205,
+          "ci_low": -0.2946029418685908,
+          "ci_high": -0.12230302906717164,
+          "n": 50
+        },
+        "compare_com_vs_clean": {
+          "n_a": 66,
+          "n_b": 50,
+          "mean_a": 0.17159602968233748,
+          "mean_b": -0.20522927130912205,
+          "mean_diff_a_minus_b": 0.3768253009914595,
+          "mannwhitney_u": 2664.0,
+          "mannwhitney_p": 1.6024320451036668e-08
+        }
+      },
+      "margin_final_prefix": {
+        "com": {
+          "mean": 0.17826137688385563,
+          "ci_low": 0.11793478494732658,
+          "ci_high": 0.24411289225266175,
+          "n": 66
+        },
+        "clean": {
+          "mean": -0.26910738161653786,
+          "ci_low": -0.3622038146921253,
+          "ci_high": -0.17447149509329998,
+          "n": 50
+        },
+        "compare_com_vs_clean": {
+          "n_a": 66,
+          "n_b": 50,
+          "mean_a": 0.17826137688385563,
+          "mean_b": -0.26910738161653786,
+          "mean_diff_a_minus_b": 0.4473687585003935,
+          "mannwhitney_u": 2757.0,
+          "mannwhitney_p": 6.885789293491388e-10
+        }
+      },
+      "margin_shift": {
+        "com": {
+          "mean": 0.03841997242792982,
+          "ci_low": 0.0018995071959226548,
+          "ci_high": 0.08080244510772343,
+          "n": 66
+        },
+        "clean": {
+          "mean": 0.018152823035294623,
+          "ci_low": -0.027048717243273124,
+          "ci_high": 0.06177237862770979,
+          "n": 50
+        },
+        "compare_com_vs_clean": {
+          "n_a": 66,
+          "n_b": 50,
+          "mean_a": 0.03841997242792982,
+          "mean_b": 0.018152823035294623,
+          "mean_diff_a_minus_b": 0.020267149392635197,
+          "mannwhitney_u": 1671.0,
+          "mannwhitney_p": 0.9090105825856553
+        }
+      }
+    },
+    "mechanism_pattern": {
+      "com_evidence_margin_gt_clean": true,
+      "com_final_margin_lt_evidence": false,
+      "com_negative_shift_rate": 0.4393939393939394
+    }
+  },
+  "cp_com": {
+    "trajectory_decomposition": {
+      "n_trajectories": 973,
+      "has_phantom_merge": 0.34532374100719426,
+      "has_com_only": 0.018499486125385406,
+      "has_cp_only": 0.11510791366906475,
+      "has_com_and_cp": 0.21068859198355602,
+      "has_anchored_hall_only": 0.0010277492291880781
+    },
+    "claim_labels": {
+      "n_claims": 2491,
+      "y_pm_rate": 0.19911682055399438,
+      "y_com_rate": 0.12846246487354476,
+      "y_cp_rate": 0.1730228823765556,
+      "both_com_cp_rate": 0.10276997189883581
+    },
+    "bcp_input_ablation_y_pm": {
+      "full_test_auroc_y_pm": 0.9040871679760568,
+      "no_other_test_auroc_y_pm": 0.8770576131687242,
+      "drop_no_other": 0.0270295548073326,
+      "interpretation": "CP mechanism: removing Other Evidence reduces y_pm detection (query/anchor-only insufficient)."
+    }
+  }
+}

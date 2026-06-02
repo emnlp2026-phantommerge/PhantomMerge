@@ -1,0 +1,39 @@
+# Owner-Contrastive BCP stage prompts (v1, deterministic)
+# Placeholders: {anchor_evidence} {source_evidence} {claim} {final_answer_prefix}
+
+## evidence_only
+Object A:
+{anchor_evidence}
+
+Object B:
+{source_evidence}
+
+Claim:
+{claim}
+
+## after_anchor
+The agent selected Object A as the final anchor.
+
+Object A:
+{anchor_evidence}
+
+Object B:
+{source_evidence}
+
+Claim:
+{claim}
+
+## final_prefix
+The agent selected Object A as the final anchor and is preparing the final answer.
+
+Final answer prefix:
+{final_answer_prefix}
+
+Object A:
+{anchor_evidence}
+
+Object B:
+{source_evidence}
+
+Claim:
+{claim}

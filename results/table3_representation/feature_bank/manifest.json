@@ -1,0 +1,33 @@
+{
+  "spec_version": "probe_extract_v1",
+  "model_path": ".cache/huggingface/hub/Qwen3-32B",
+  "claims_parquet": "results/table3_representation/claims.parquet",
+  "n_claims": 2491,
+  "hidden_dim": 5120,
+  "layer_indices": [
+    58,
+    60,
+    63
+  ],
+  "layer_names": [
+    "L4",
+    "L2",
+    "L"
+  ],
+  "bcp_variants": [
+    "full",
+    "no_other",
+    "no_anchor",
+    "no_query"
+  ],
+  "pooling": [
+    "mean",
+    "last"
+  ],
+  "n_forward_bcp_per_claim": 4,
+  "n_oc_records": 348,
+  "completed_rows": 2491,
+  "smoke": false,
+  "elapsed_sec": 1037.5,
+  "oc_triplets": "results/table3_representation/feature_bank/oc_triplets.jsonl"
+}

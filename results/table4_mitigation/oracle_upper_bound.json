@@ -1,0 +1,35 @@
+{
+  "description": "Keep claims with no PM failure label; recompute has_phantom_merge",
+  "splits": {
+    "test": {
+      "split": "test",
+      "n_trajectories": 146,
+      "baseline_pm_rate": 0.3561643835616438,
+      "baseline_pm_count": 52,
+      "oracle_pm_rate": 0.0,
+      "oracle_pm_count": 0,
+      "pm_reduction": 0.3561643835616438,
+      "claims_retained_mean": 2.0342465753424657
+    },
+    "train": {
+      "split": "train",
+      "n_trajectories": 681,
+      "baseline_pm_rate": 0.34508076358296624,
+      "baseline_pm_count": 235,
+      "oracle_pm_rate": 0.0,
+      "oracle_pm_count": 0,
+      "pm_reduction": 0.34508076358296624,
+      "claims_retained_mean": 2.0704845814977975
+    },
+    "val": {
+      "split": "val",
+      "n_trajectories": 146,
+      "baseline_pm_rate": 0.3356164383561644,
+      "baseline_pm_count": 49,
+      "oracle_pm_rate": 0.0,
+      "oracle_pm_count": 0,
+      "pm_reduction": 0.3356164383561644,
+      "claims_retained_mean": 1.9726027397260273
+    }
+  }
+}

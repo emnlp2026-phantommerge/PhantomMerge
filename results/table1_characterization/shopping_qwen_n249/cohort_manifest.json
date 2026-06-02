@@ -1,0 +1,10 @@
+{
+  "cohort_key": "shopping_qwen_n249",
+  "paper_denominator_n": 249,
+  "inclusion_rule": "all",
+  "source_per": "results/table1_characterization/shopping_qwen_n249/per_trajectory.jsonl",
+  "n_excluded": 0,
+  "sha256_per_source": "e730a91d652ad1da6ffc46ab79dcb784864c9eb03ebc6757fe808ecba4ac7ce0",
+  "sha256_per_sealed": "e730a91d652ad1da6ffc46ab79dcb784864c9eb03ebc6757fe808ecba4ac7ce0",
+  "sealed_per": "results/table1_characterization/shopping_qwen_n249/per_trajectory.jsonl"
+}

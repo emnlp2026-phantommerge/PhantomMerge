@@ -1,0 +1,28 @@
+{
+  "probe_dir": "results/table3_representation",
+  "feature_bank": "results/table3_representation/feature_bank",
+  "label": "y_pm",
+  "variant": "full",
+  "pool": "mean",
+  "layer_slot": 2,
+  "layer_name": "L",
+  "hidden_dim": 5120,
+  "manifest_spec": "probe_extract_v1",
+  "splits": {
+    "train": {
+      "n": 1769,
+      "pos_rate": 0.20293951384963257,
+      "auroc": 0.9023667002508939
+    },
+    "val": {
+      "n": 353,
+      "pos_rate": 0.18413597733711048,
+      "auroc": 0.8976495726495727
+    },
+    "test": {
+      "n": 369,
+      "pos_rate": 0.1951219512195122,
+      "auroc": 0.9040871679760568
+    }
+  }
+}

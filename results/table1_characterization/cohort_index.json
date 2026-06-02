@@ -1,0 +1,20 @@
+{
+  "description": "Table 1 sealed cohorts (absolute counts; rates in counts.json cells only)",
+  "denominators": {
+    "shopping_qwen": 249,
+    "shopping_mistral": 250,
+    "fhir_qwen": 973,
+    "fhir_mistral": 847
+  },
+  "fhir_mistral_excluded": {
+    "rule": "pm_eligible minus judge_valid (timed out / parse error); not re-run",
+    "n_excluded": 22,
+    "note": "Trajectories excluded from the sealed cohort due to judge timeout/parse failure (count only; per-trajectory rows not redistributed in this release)."
+  },
+  "cohort_keys": [
+    "shopping_qwen_n249",
+    "shopping_mistral_n250",
+    "fhir_qwen_n973",
+    "fhir_mistral_n847"
+  ]
+}

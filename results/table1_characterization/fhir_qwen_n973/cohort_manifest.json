@@ -1,0 +1,10 @@
+{
+  "cohort_key": "fhir_qwen_n973",
+  "paper_denominator_n": 973,
+  "inclusion_rule": "all",
+  "source_per": "results/table1_characterization/fhir_qwen_n973/per_trajectory.jsonl",
+  "n_excluded": 0,
+  "sha256_per_source": "b5e794d9eb19005099d06d50cb1229b492f146f962312d0ec4ae1aff8c4cf787",
+  "sha256_per_sealed": "b5e794d9eb19005099d06d50cb1229b492f146f962312d0ec4ae1aff8c4cf787",
+  "sealed_per": "results/table1_characterization/fhir_qwen_n973/per_trajectory.jsonl"
+}

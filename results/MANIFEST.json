@@ -1,0 +1,13 @@
+{
+  "release": "emnlp2026_phantom_merge_anonymous",
+  "repository": "https://github.com/emnlp2026-phantommerge/PhantomMerge",
+  "purpose": "Frozen VNEXT protocol labels and paper tables (P1 layout).",
+  "verify": "bash reproduce/verify.sh",
+  "artifact_index": "ARTIFACT.json",
+  "table1": "results/table1_characterization",
+  "table2": "results/table2_global_support",
+  "table3": "results/table3_representation",
+  "table4": "results/table4_mitigation",
+  "appendix": "results/appendix",
+  "supplemental": "results/supplemental"
+}

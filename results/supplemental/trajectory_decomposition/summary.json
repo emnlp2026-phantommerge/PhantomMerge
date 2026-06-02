@@ -1,0 +1,18 @@
+{
+  "fhir_qwen3-32b": {
+    "n_trajectories": 973,
+    "has_phantom_merge": 0.34532374100719426,
+    "has_com_only": 0.018499486125385406,
+    "has_cp_only": 0.11510791366906475,
+    "has_com_and_cp": 0.21068859198355602,
+    "has_anchored_hall_only": 0.0010277492291880781
+  },
+  "shopping_qwen3-32b": {
+    "n_trajectories": 249,
+    "has_phantom_merge": 0.18072289156626506,
+    "has_com_only": 0.0,
+    "has_cp_only": 0.13253012048192772,
+    "has_com_and_cp": 0.020080321285140562,
+    "has_anchored_hall_only": 0.020080321285140562
+  }
+}

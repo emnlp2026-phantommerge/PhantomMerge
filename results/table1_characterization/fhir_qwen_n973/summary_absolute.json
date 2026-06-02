@@ -1,0 +1,104 @@
+{
+  "pipeline_version": "fhir_pm_judge_vNEXT",
+  "paper_denominator_n": 973,
+  "num_trajectories": 973,
+  "trajectory_complete": 973,
+  "trajectory_incomplete": 0,
+  "anchor_recoverable": 971,
+  "task_correct_llm": 218,
+  "task_incorrect_llm": 755,
+  "task_unknown_llm": 0,
+  "claim_label_counts": {
+    "constraint_projection": 175,
+    "cross_object_merge": 320,
+    "correct_binding": 1228,
+    "pure_hallucination": 767,
+    "anchored_hallucination": 1
+  },
+  "claim_label_multiset_counts": {
+    "constraint_projection": 431,
+    "cross_object_merge": 320,
+    "correct_binding": 1228,
+    "pure_hallucination": 767,
+    "anchored_hallucination": 1
+  },
+  "claim_structure_counts": {
+    "n_claims_total": 2491,
+    "n_claims_cross_only": 64,
+    "n_claims_projection_only": 175,
+    "n_claims_cross_and_projection": 256,
+    "n_claims_anchored_hall_only": 1,
+    "n_claims_pure_only": 767,
+    "n_claims_evidence_gap": 0,
+    "n_claims_correct_only": 1228,
+    "n_claims_multi_pm_label": 256
+  },
+  "claims_per_trajectory": {
+    "mean": 2.56,
+    "min": 1,
+    "max": 10,
+    "distribution": {
+      "2": 531,
+      "4": 100,
+      "3": 192,
+      "1": 79,
+      "5": 64,
+      "9": 1,
+      "8": 1,
+      "7": 3,
+      "10": 1,
+      "6": 1
+    }
+  },
+  "trajectory_label_counts": {
+    "has_cross_object_merge": 223,
+    "has_constraint_projection": 317,
+    "has_anchored_hallucination": 1,
+    "has_pure_hallucination": 528,
+    "has_evidence_gap": 0,
+    "has_phantom_merge": 336
+  },
+  "task_correctness_x_binding": {
+    "task_correct__binding_clean_or_correct": 71,
+    "task_correct__phantom_merge": 65,
+    "task_correct__pure_hallucination_only": 82,
+    "task_incorrect__binding_clean_or_correct": 215,
+    "task_incorrect__phantom_merge": 271,
+    "task_incorrect__pure_hallucination_only": 269
+  },
+  "by_primary_stratum": {
+    "medication_semantic_rivals": {
+      "n": 407,
+      "pm": 151,
+      "task_ok": 63,
+      "cross": 87,
+      "proj": 141,
+      "hall": 0
+    },
+    "temporal_multi_instance_rivals": {
+      "n": 304,
+      "pm": 89,
+      "task_ok": 84,
+      "cross": 70,
+      "proj": 82,
+      "hall": 0
+    },
+    "numeric_value_rivals": {
+      "n": 180,
+      "pm": 64,
+      "task_ok": 4,
+      "cross": 43,
+      "proj": 63,
+      "hall": 1
+    },
+    "encounter_procedure_rivals": {
+      "n": 82,
+      "pm": 32,
+      "task_ok": 67,
+      "cross": 23,
+      "proj": 31,
+      "hall": 0
+    }
+  },
+  "judge_errors": 14
+}

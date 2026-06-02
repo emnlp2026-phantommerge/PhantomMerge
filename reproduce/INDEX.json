@@ -1,0 +1,34 @@
+{
+  "description": "Paper-aligned reproduction entry points. Sealed results/ are authoritative.",
+  "tier0_verify": "reproduce/verify.sh",
+  "tiers": {
+    "table1": {
+      "paper": "Table 1 \u2014 cross-domain PM characterization",
+      "script": "reproduce/table1_characterization.sh",
+      "results": "results/table1_characterization/",
+      "note": "CPU only; checks sealed counts vs per_trajectory JSONL."
+    },
+    "table3_bcp": {
+      "paper": "Table 3 \u2014 BCP-Detect",
+      "script": "reproduce/table3_bcp_detect.sh",
+      "results": "results/table3_representation/bcp_detect.json",
+      "note": "Optional re-run; requires GPU + feature bank tensors (not shipped)."
+    },
+    "table3_oc": {
+      "paper": "Table 3 \u2014 OC-BCP mechanism",
+      "script": "reproduce/table3_oc_bcp.sh",
+      "results": "results/table3_representation/oc_bcp.json"
+    },
+    "table4": {
+      "paper": "Table 4 \u2014 MSPS mitigation",
+      "script": "reproduce/table4_mitigation.sh",
+      "results": "results/table4_mitigation/msps_test146.json",
+      "note": "Optional re-run; GPU recommended."
+    }
+  },
+  "shortcuts": {
+    "run_diagnosis": "scripts/run_diagnosis.sh",
+    "run_probe": "scripts/run_probe.sh",
+    "run_mitigation": "scripts/run_mitigation.sh"
+  }
+}

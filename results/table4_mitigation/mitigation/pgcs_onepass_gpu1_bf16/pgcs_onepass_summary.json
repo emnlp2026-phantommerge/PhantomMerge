@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-05-23T20:47:16.986734+00:00",
+  "method": "PGCS-one-pass",
+  "protocol": {
+    "probe_driven": true,
+    "judge_rounds": 1,
+    "msps_tau": 0.45,
+    "layer_slot": 1,
+    "k_rewrite_val_selected": 1,
+    "pm_definition": "unchanged VNEXT",
+    "judge_metrics_exclude_errors": true
+  },
+  "n_test_trajectories": 146,
+  "n_cases_recorded": 146,
+  "n_judged_success": 146,
+  "elapsed_sec": 4452.2,
+  "baseline_pm_count": 52,
+  "baseline_pm_rate": 0.3561643835616438,
+  "pgcs_pm_count": 26,
+  "pgcs_pm_rate": 0.1780821917808219,
+  "pm_reduction_rate": 0.21232876712328766,
+  "mean_baseline_pm_claims": 0.4931506849315068,
+  "mean_pgcs_pm_claims": 0.1780821917808219,
+  "mean_claim_retention": 0.5472602739726027,
+  "label_pm_after_filter_rate": 0.04794520547945205,
+  "judge_errors": 0,
+  "judge_error_rate": 0.0,
+  "reference_msps_test146": {
+    "n_trajectories": 146,
+    "baseline_pm_count": 52,
+    "baseline_pm_rate": 0.3561643835616438,
+    "gated_pm_count": 7,
+    "gated_pm_rate": 0.04794520547945205,
+    "pm_reduction": 0.3082191780821918,
+    "claims_retained_mean": 1.4794520547945205,
+    "mean_pm_claims_baseline": 0.4931506849315068,
+    "mean_pm_claims_gated": 0.04794520547945205,
+    "pm_claims_total_baseline": 72,
+    "pm_claims_total_gated": 7
+  },
+  "reference_bcp_single_head": {
+    "tau": 0.5,
+    "pm_rate": 0.0958904109589041,
+    "pm_count": 14,
+    "pm_reduction": 0.2602739726027397,
+    "claims_retained_mean": 1.7945205479452055,
+    "task_correct_pm_rate": 0.125
+  },
+  "reference_oracle_test146": {
+    "split": "test",
+    "n_trajectories": 146,
+    "baseline_pm_rate": 0.3561643835616438,
+    "baseline_pm_count": 52,
+    "oracle_pm_rate": 0.0,
+    "oracle_pm_count": 0,
+    "pm_reduction": 0.3561643835616438,
+    "claims_retained_mean": 2.0342465753424657
+  }
+}

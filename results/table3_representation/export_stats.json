@@ -1,0 +1,18 @@
+{
+  "domain": "fhir",
+  "model": "qwen3-32b",
+  "per_path": "results/table1_characterization/fhir_qwen_n973/per_trajectory.jsonl",
+  "n_claims": 2491,
+  "n_groups": 973,
+  "y_pm": 496,
+  "y_com": 320,
+  "y_cp": 431,
+  "oc_eligible": 66,
+  "split_counts": {
+    "train": 1769,
+    "test": 369,
+    "val": 353
+  },
+  "out_dir": "results/table3_representation",
+  "claims_parquet": "results/table3_representation/claims.parquet"
+}

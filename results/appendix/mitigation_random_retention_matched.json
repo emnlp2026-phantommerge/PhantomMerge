@@ -1,0 +1,12 @@
+{
+  "n_seeds": 200,
+  "pm_rate_mean": 0.1139041095890411,
+  "pm_rate_std": 0.013874048074845035,
+  "pm_rate_median": 0.1095890410958904,
+  "pm_rate_p05": 0.08904109589041095,
+  "pm_rate_p95": 0.136986301369863,
+  "pm_count_mean": 16.63,
+  "pm_count_std": 2.0256110189273757,
+  "removed_cb_fraction_mean": 0.38588235294117645,
+  "target_retention_source": "msps_tau0.45_per_trajectory"
+}

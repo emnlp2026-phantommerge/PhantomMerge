@@ -1,0 +1,51 @@
+{
+  "pipeline_version": "shopping_pm_judge_vNEXT",
+  "paper_denominator_n": 250,
+  "num_trajectories": 250,
+  "task_correct_exact": 80,
+  "task_incorrect_exact": 170,
+  "trajectory_label_counts": {
+    "has_phantom_merge": 49,
+    "has_constraint_projection": 42,
+    "has_cross_object_merge": 4,
+    "has_anchored_hallucination": 10,
+    "has_pure_hallucination": 22,
+    "has_evidence_gap": 0
+  },
+  "claim_label_counts": {
+    "correct_binding": 1261,
+    "pure_hallucination": 34,
+    "cross_object_merge": 7,
+    "anchored_hallucination": 12,
+    "constraint_projection": 52
+  },
+  "claim_label_multiset_counts": {
+    "correct_binding": 1261,
+    "pure_hallucination": 34,
+    "cross_object_merge": 7,
+    "constraint_projection": 56,
+    "anchored_hallucination": 12
+  },
+  "claim_structure_counts": {
+    "n_claims_total": 1366,
+    "n_claims_cross_only": 3,
+    "n_claims_projection_only": 52,
+    "n_claims_cross_and_projection": 4,
+    "n_claims_anchored_hall_only": 12,
+    "n_claims_pure_only": 34,
+    "n_claims_evidence_gap": 0,
+    "n_claims_correct_only": 1261,
+    "n_claims_multi_pm_label": 4
+  },
+  "task_correctness_x_binding": {
+    "task_correct__binding_clean_or_correct": 59,
+    "task_correct__no_checkable_claims": 1,
+    "task_correct__phantom_merge": 16,
+    "task_correct__pure_hallucination_only": 4,
+    "task_incorrect__binding_clean_or_correct": 123,
+    "task_incorrect__phantom_merge": 33,
+    "task_incorrect__pure_hallucination_only": 14
+  },
+  "n_claims_total": 1366,
+  "judge_errors": 0
+}

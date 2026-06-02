@@ -1,0 +1,82 @@
+{
+  "paper_denominators": {
+    "shopping_qwen_n249": 249,
+    "shopping_mistral_n250": 250,
+    "fhir_qwen_n973": 973,
+    "fhir_mistral_n847": 847
+  },
+  "cells": {
+    "shopping_qwen_n249": {
+      "cohort_key": "shopping_qwen_n249",
+      "domain": "shopping",
+      "model": "qwen3-32b",
+      "paper_denominator_n": 249,
+      "task_correct": 69,
+      "task_incorrect": 180,
+      "task_unknown": 0,
+      "has_phantom_merge": 45,
+      "has_constraint_projection": 40,
+      "has_cross_object_merge": 5,
+      "has_anchored_hallucination": 8,
+      "has_pure_hallucination": 37,
+      "task_correct_and_pm": 12,
+      "task_correct_and_binding_clean": 50,
+      "n_claims_total": 1676,
+      "judge_errors": 1
+    },
+    "shopping_mistral_n250": {
+      "cohort_key": "shopping_mistral_n250",
+      "domain": "shopping",
+      "model": "mistral-24b",
+      "paper_denominator_n": 250,
+      "task_correct": 80,
+      "task_incorrect": 170,
+      "task_unknown": 0,
+      "has_phantom_merge": 49,
+      "has_constraint_projection": 42,
+      "has_cross_object_merge": 4,
+      "has_anchored_hallucination": 10,
+      "has_pure_hallucination": 22,
+      "task_correct_and_pm": 16,
+      "task_correct_and_binding_clean": 59,
+      "n_claims_total": 1366,
+      "judge_errors": 0
+    },
+    "fhir_qwen_n973": {
+      "cohort_key": "fhir_qwen_n973",
+      "domain": "fhir",
+      "model": "qwen3-32b",
+      "paper_denominator_n": 973,
+      "task_correct": 218,
+      "task_incorrect": 755,
+      "task_unknown": 0,
+      "has_phantom_merge": 336,
+      "has_constraint_projection": 317,
+      "has_cross_object_merge": 223,
+      "has_anchored_hallucination": 1,
+      "has_pure_hallucination": 528,
+      "task_correct_and_pm": 65,
+      "task_correct_and_binding_clean": 71,
+      "n_claims_total": 2491,
+      "judge_errors": 14
+    },
+    "fhir_mistral_n847": {
+      "cohort_key": "fhir_mistral_n847",
+      "domain": "fhir",
+      "model": "mistral-24b",
+      "paper_denominator_n": 847,
+      "task_correct": 191,
+      "task_incorrect": 656,
+      "task_unknown": 0,
+      "has_phantom_merge": 422,
+      "has_constraint_projection": 373,
+      "has_cross_object_merge": 296,
+      "has_anchored_hallucination": 15,
+      "has_pure_hallucination": 621,
+      "task_correct_and_pm": 101,
+      "task_correct_and_binding_clean": 37,
+      "n_claims_total": 2441,
+      "judge_errors": 0
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-05-23T05:45:20.714495+00:00",
+  "method": "Multi-Signal Probe Stack (MSPS)",
+  "protocol": {
+    "pm_definition": "unchanged VNEXT (cross|projection|anchored_hall)",
+    "layer_slot": 1,
+    "layer_name": "L2",
+    "heads": [
+      "y_pm",
+      "y_com",
+      "y_cp"
+    ],
+    "oc_margin": "margin_evidence_only > cut for oc_eligible",
+    "val_selection": "max PM reduction, claims_retained_mean >= 1.2",
+    "prior_results_preserved": true
+  },
+  "head_metrics_test_auroc": {
+    "y_pm": {
+      "auroc_test": 0.9130658436213992,
+      "layer": "L2"
+    },
+    "y_com": {
+      "auroc_test": 0.9402606310013717,
+      "layer": "L2"
+    },
+    "y_cp": {
+      "auroc_test": 0.9268077601410936,
+      "layer": "L2"
+    }
+  },
+  "val_selected_config": {
+    "tau_max": 0.45,
+    "tau_com": 0.45,
+    "tau_cp": 0.45,
+    "oc_margin_cut": 0.0,
+    "use_oc_gate": false
+  },
+  "val_eval": {
+    "n_trajectories": 146,
+    "baseline_pm_count": 49,
+    "baseline_pm_rate": 0.3356164383561644,
+    "gated_pm_count": 3,
+    "gated_pm_rate": 0.02054794520547945,
+    "pm_reduction": 0.31506849315068497,
+    "claims_retained_mean": 1.404109589041096,
+    "mean_pm_claims_baseline": 0.4452054794520548,
+    "mean_pm_claims_gated": 0.02054794520547945,
+    "pm_claims_total_baseline": 65,
+    "pm_claims_total_gated": 3
+  },
+  "test_full_146": {
+    "n_trajectories": 146,
+    "baseline_pm_count": 52,
+    "baseline_pm_rate": 0.3561643835616438,
+    "gated_pm_count": 7,
+    "gated_pm_rate": 0.04794520547945205,
+    "pm_reduction": 0.3082191780821918,
+    "claims_retained_mean": 1.4794520547945205,
+    "mean_pm_claims_baseline": 0.4931506849315068,
+    "mean_pm_claims_gated": 0.04794520547945205,
+    "pm_claims_total_baseline": 72,
+    "pm_claims_total_gated": 7
+  },
+  "test_pm_subset_52": {
+    "n_trajectories": 52,
+    "baseline_pm_count": 52,
+    "baseline_pm_rate": 1.0,
+    "gated_pm_count": 7,
+    "gated_pm_rate": 0.1346153846153846,
+    "pm_reduction": 0.8653846153846154,
+    "claims_retained_mean": 0.9038461538461539,
+    "mean_pm_claims_baseline": 1.3846153846153846,
+    "mean_pm_claims_gated": 0.1346153846153846,
+    "pm_claims_total_baseline": 72,
+    "pm_claims_total_gated": 7
+  },
+  "regen_pm_test_52": {
+    "n_trajectories": 52,
+    "baseline_pm_count": 45,
+    "baseline_pm_rate": 0.8653846153846154,
+    "gated_pm_count": 5,
+    "gated_pm_rate": 0.09615384615384616,
+    "pm_reduction": 0.7692307692307693,
+    "claims_retained_mean": 1.6923076923076923,
+    "mean_pm_claims_baseline": 1.1346153846153846,
+    "mean_pm_claims_gated": 0.11538461538461539,
+    "pm_claims_total_baseline": 59,
+    "pm_claims_total_gated": 6
+  },
+  "legacy_single_head_y_pm_tau0.5_ref": {
+    "tau": 0.5,
+    "pm_rate": 0.0958904109589041,
+    "pm_count": 14,
+    "pm_reduction": 0.2602739726027397,
+    "claims_retained_mean": 1.7945205479452055,
+    "task_correct_pm_rate": 0.125
+  },
+  "oracle_test_ref": {
+    "split": "test",
+    "n_trajectories": 146,
+    "baseline_pm_rate": 0.3561643835616438,
+    "baseline_pm_count": 52,
+    "oracle_pm_rate": 0.0,
+    "oracle_pm_count": 0,
+    "pm_reduction": 0.3561643835616438,
+    "claims_retained_mean": 2.0342465753424657
+  },
+  "conclusion_template": "MSPS is the pre-specified maximum probe stack under VNEXT; oracle remains upper bound; rollout-time intervention not included.",
+  "beats_legacy_single_head": true,
+  "vs_legacy": {
+    "legacy_pm_count_test146": 14,
+    "msps_pm_count_test146": 7,
+    "delta_trajectories": 7
+  }
+}

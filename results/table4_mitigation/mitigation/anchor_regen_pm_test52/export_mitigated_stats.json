@@ -1,0 +1,9 @@
+{
+  "per_case_jsonl": "results/table3_representation/mitigation_anchor_pm_test_standard/mitigation_anchor_only_per_case.jsonl",
+  "n_claims": 233,
+  "n_groups": 52,
+  "y_pm": 59,
+  "split_counts": {
+    "test": 233
+  }
+}

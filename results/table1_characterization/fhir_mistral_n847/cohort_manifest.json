@@ -1,0 +1,10 @@
+{
+  "cohort_key": "fhir_mistral_n847",
+  "paper_denominator_n": 847,
+  "inclusion_rule": "pm_judge_valid",
+  "source_per": "results/table1_characterization/fhir_mistral_n847/per_trajectory.jsonl",
+  "n_excluded": 22,
+  "sha256_per_source": "ce99a3ce815cc86b88ce8b2143e9c865a2b688cfaca0127181117989bf52c41c",
+  "sha256_per_sealed": "ce99a3ce815cc86b88ce8b2143e9c865a2b688cfaca0127181117989bf52c41c",
+  "sealed_per": "results/table1_characterization/fhir_mistral_n847/per_trajectory.jsonl"
+}

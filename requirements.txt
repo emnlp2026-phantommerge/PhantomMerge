@@ -1,0 +1,17 @@
+# Phantom Merge anonymous release — install in a virtualenv
+# Python 3.10+
+
+# Core validation & results
+pandas>=2.0,<3
+pyarrow>=14.0,<20
+
+# Probe stack (BCP / mitigation)
+numpy>=1.24,<3
+scikit-learn>=1.3,<2
+joblib>=1.3,<2
+scipy>=1.10,<2
+
+# Optional: re-extract hidden states or run ModernBERT validity controls
+# torch>=2.1
+# transformers>=4.51
+# accelerate>=0.30

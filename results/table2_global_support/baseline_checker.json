@@ -1,0 +1,38 @@
+{
+  "title": "Why context-level support is insufficient for Phantom Merge diagnosis",
+  "definition": {
+    "pm_claim": "claim with support_labels intersecting {CEM, CAP, ASF}",
+    "global_support_would_pass": "CEM or CAP present (supported by non-anchor evidence or user constraint)",
+    "wording": "potentially missed by context-level support checking"
+  },
+  "rows": [
+    {
+      "cohort": "Shopping Qwen",
+      "pm_claims": 69,
+      "cem_or_cap_pm_claims": 60,
+      "asf_only_pm_claims": 9,
+      "potentially_missed_by_global_support_pct": 87.0
+    },
+    {
+      "cohort": "Shopping Mistral",
+      "pm_claims": 71,
+      "cem_or_cap_pm_claims": 59,
+      "asf_only_pm_claims": 12,
+      "potentially_missed_by_global_support_pct": 83.1
+    },
+    {
+      "cohort": "FHIR Qwen",
+      "pm_claims": 496,
+      "cem_or_cap_pm_claims": 495,
+      "asf_only_pm_claims": 1,
+      "potentially_missed_by_global_support_pct": 99.8
+    },
+    {
+      "cohort": "FHIR Mistral",
+      "pm_claims": 654,
+      "cem_or_cap_pm_claims": 638,
+      "asf_only_pm_claims": 16,
+      "potentially_missed_by_global_support_pct": 97.6
+    }
+  ]
+}

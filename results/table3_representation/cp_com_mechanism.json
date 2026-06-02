@@ -1,0 +1,23 @@
+{
+  "trajectory_decomposition": {
+    "n_trajectories": 973,
+    "has_phantom_merge": 0.34532374100719426,
+    "has_com_only": 0.018499486125385406,
+    "has_cp_only": 0.11510791366906475,
+    "has_com_and_cp": 0.21068859198355602,
+    "has_anchored_hall_only": 0.0010277492291880781
+  },
+  "claim_labels": {
+    "n_claims": 2491,
+    "y_pm_rate": 0.19911682055399438,
+    "y_com_rate": 0.12846246487354476,
+    "y_cp_rate": 0.1730228823765556,
+    "both_com_cp_rate": 0.10276997189883581
+  },
+  "bcp_input_ablation_y_pm": {
+    "full_test_auroc_y_pm": 0.9040871679760568,
+    "no_other_test_auroc_y_pm": 0.8770576131687242,
+    "drop_no_other": 0.0270295548073326,
+    "interpretation": "CP mechanism: removing Other Evidence reduces y_pm detection (query/anchor-only insufficient)."
+  }
+}

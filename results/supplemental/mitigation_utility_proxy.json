@@ -1,0 +1,67 @@
+{
+  "generated_by": "scripts/compute_mitigation_utility_proxy.py",
+  "split": "test",
+  "n_trajectories": 146,
+  "operating_points": {
+    "BCP_tau0.5": {
+      "n_trajectories": 146,
+      "pm_rate": 0.0958904109589041,
+      "pm_count": 14,
+      "claims_retained_mean": 1.7945205479452055,
+      "claims_retained_total": 262,
+      "cb_claims_retained": 157,
+      "cb_retention_rate": 0.839572192513369,
+      "anchor_unchanged_rate": 1.0,
+      "task_unchanged_heuristic_rate_on_task_correct": 0.8125,
+      "n_baseline_task_correct": 32,
+      "task_unchanged_heuristic_count": 26,
+      "drop_mask_source": "probe_bcp_detect.joblib + bcp_full_mean.npy"
+    },
+    "MSPS_aggressive_tau0.45": {
+      "n_trajectories": 146,
+      "pm_rate": 0.04794520547945205,
+      "pm_count": 7,
+      "claims_retained_mean": 1.4794520547945205,
+      "claims_retained_total": 216,
+      "cb_claims_retained": 126,
+      "cb_retention_rate": 0.6737967914438503,
+      "anchor_unchanged_rate": 1.0,
+      "task_unchanged_heuristic_rate_on_task_correct": 0.71875,
+      "n_baseline_task_correct": 32,
+      "task_unchanged_heuristic_count": 23,
+      "drop_mask_source": "MSPS L2 three-head + oc margins, tau=0.45"
+    },
+    "MSPS_balanced_tau0.55": {
+      "n_trajectories": 146,
+      "pm_rate": 0.1232876712328767,
+      "pm_count": 18,
+      "claims_retained_mean": 1.8972602739726028,
+      "claims_retained_total": 277,
+      "cb_claims_retained": 165,
+      "cb_retention_rate": 0.8823529411764706,
+      "anchor_unchanged_rate": 1.0,
+      "task_unchanged_heuristic_rate_on_task_correct": 0.90625,
+      "n_baseline_task_correct": 32,
+      "task_unchanged_heuristic_count": 29,
+      "drop_mask_source": "MSPS L2 three-head + oc margins, tau=0.55"
+    },
+    "oracle_delete_pm_claims": {
+      "n_trajectories": 146,
+      "pm_rate": 0.0,
+      "pm_count": 0,
+      "claims_retained_mean": 2.0342465753424657,
+      "claims_retained_total": 297,
+      "cb_claims_retained": 187,
+      "cb_retention_rate": 1.0,
+      "anchor_unchanged_rate": 1.0,
+      "task_unchanged_heuristic_rate_on_task_correct": 1.0,
+      "n_baseline_task_correct": 32,
+      "task_unchanged_heuristic_count": 32,
+      "drop_mask_source": "oracle: drop judge-PM claims"
+    }
+  },
+  "definitions": {
+    "anchor_unchanged": "Kept claims anchor_id \u2286 protocol anchor; empty kept = unchanged.",
+    "task_unchanged_heuristic": "baseline task_correct=1 and zero CB removed (not FHIR re-eval)."
+  }
+}

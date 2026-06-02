@@ -1,0 +1,5 @@
+method,pm_rate,pm_count,claims_retained_mean,cb_retention_rate,cb_claims_retained,anchor_unchanged_rate,task_unchanged_heuristic_on_task_correct,data_source
+BCP_tau0.5,0.0959,14,1.795,0.840,157,1.000,0.8125,sealed_probe_artifacts
+MSPS_aggressive_tau0.45,0.0479,7,1.479,0.674,126,1.000,0.7188,sealed_probe_artifacts
+MSPS_balanced_tau0.55,0.1233,18,1.897,0.882,165,1.000,0.9063,sealed_probe_artifacts
+oracle_delete_pm_claims,0.0000,0,2.034,1.000,187,1.000,1.0000,sealed_probe_artifacts

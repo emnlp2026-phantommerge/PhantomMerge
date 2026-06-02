@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-05-23T03:20:57.779473+00:00",
+  "cohort": "pm_test",
+  "mitigation_judge_closure": false,
+  "n_selected": 52,
+  "n_judged_this_run": 52,
+  "elapsed_sec": 2850.9,
+  "model_path": ".cache/huggingface/hub/Qwen3-32B",
+  "judge": {
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "base_url": "http://127.0.0.1:8001/v1",
+    "dry_run": false
+  },
+  "baseline_pm_rate": 1.0,
+  "mitigated_pm_rate": 0.8653846153846154,
+  "pm_reduction_rate": 0.1346153846153846,
+  "mean_baseline_pm_claims": 1.3846153846153846,
+  "mean_mitigated_pm_claims": 1.1346153846153846,
+  "judge_errors": 0
+}

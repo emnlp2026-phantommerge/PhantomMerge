@@ -1,0 +1,10 @@
+{
+  "model_path": ".cache/huggingface/hub/Qwen3-32B",
+  "layer_index": 63,
+  "hidden_dim": 5120,
+  "n_rows": 5,
+  "claims_parquet": "results/table3_representation/claims.parquet",
+  "npy": "results/table3_representation/hidden_bcp_L63.npy",
+  "meta": "results/table3_representation/hidden_bcp_L63_meta.jsonl",
+  "smoke": 5
+}

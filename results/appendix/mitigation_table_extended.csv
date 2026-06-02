@@ -1,0 +1,7 @@
+method,split,n_trajectories,pm_count,pm_rate,claims_retained_total,claims_retained_mean,pm_claims_total,cb_claims_baseline,cb_claims_retained,cb_claims_removed,cb_retention_rate,removed_cb_fraction_of_removed,pm_claims_removed,pgcs_judged_claims_mean,pgcs_judged_claims_total,label_pm_after_filter_only_rate,pm_count_mean,pm_rate_mean,pm_rate_std,pm_rate_p05,pm_rate_p95,n_seeds,note
+baseline,test,146,52,0.3561643835616438,369,2.5273972602739727,72,187,187,0,1.0,0.0,0,,,,,,,,,,
+MSPS_tau0.45,test,146,7,0.04794520547945205,216,1.4794520547945205,7,187,126,61,0.6737967914438503,0.39869281045751637,65,,,,,,,,,,
+BCP_tau0.5,test,146,14,0.0958904109589041,262,1.7945205479452055,15,187,157,30,0.839572192513369,0.2803738317757009,57,,,,,,,,,,
+oracle_delete_pm_claims,test,146,0,0.0,297,2.0342465753424657,0,187,187,0,1.0,0.0,72,,,,,,,,,,
+PGCS_onepass,test,146,26,0.1780821917808219,,0.5472602739726028,,,,,,,,2.5273972602739727,369,0.04794520547945205,,,,,,,
+random_retention_matched_MSPS,test,146,,,,,,,,,,,,,,,16.63,0.1139041095890411,0.013874048074845035,0.08904109589041095,0.136986301369863,200,Random claim deletion matching MSPS per-trajectory retention (200 seeds)

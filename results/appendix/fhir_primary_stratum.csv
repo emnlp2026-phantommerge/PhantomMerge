@@ -1,0 +1,5 @@
+primary_stratum,n_trajectories,pm_count,pm_rate,task_correct_count,cross_count,projection_count,anchored_hall_count
+medication_semantic_rivals,407,151,0.371007371007371,63,87,141,0
+temporal_multi_instance_rivals,304,89,0.29276315789473684,84,70,82,0
+numeric_value_rivals,180,64,0.35555555555555557,4,43,63,1
+encounter_procedure_rivals,82,32,0.3902439024390244,67,23,31,0

@@ -1,0 +1,10 @@
+{
+  "cohort_key": "shopping_mistral_n250",
+  "paper_denominator_n": 250,
+  "inclusion_rule": "all",
+  "source_per": "results/table1_characterization/shopping_mistral_n250/per_trajectory.jsonl",
+  "n_excluded": 0,
+  "sha256_per_source": "321101ccdd393fc561c828220cfd233a5153becd92d09ed1934c8ace77c23a3f",
+  "sha256_per_sealed": "321101ccdd393fc561c828220cfd233a5153becd92d09ed1934c8ace77c23a3f",
+  "sealed_per": "results/table1_characterization/shopping_mistral_n250/per_trajectory.jsonl"
+}

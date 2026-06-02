@@ -1,0 +1,51 @@
+{
+  "pipeline_version": "shopping_pm_judge_vNEXT",
+  "paper_denominator_n": 249,
+  "num_trajectories": 249,
+  "task_correct_exact": 69,
+  "task_incorrect_exact": 180,
+  "trajectory_label_counts": {
+    "has_phantom_merge": 45,
+    "has_constraint_projection": 40,
+    "has_cross_object_merge": 5,
+    "has_anchored_hallucination": 8,
+    "has_pure_hallucination": 37,
+    "has_evidence_gap": 0
+  },
+  "claim_label_counts": {
+    "correct_binding": 1555,
+    "pure_hallucination": 52,
+    "constraint_projection": 53,
+    "anchored_hallucination": 9,
+    "cross_object_merge": 7
+  },
+  "claim_label_multiset_counts": {
+    "correct_binding": 1555,
+    "pure_hallucination": 52,
+    "constraint_projection": 60,
+    "anchored_hallucination": 9,
+    "cross_object_merge": 7
+  },
+  "claim_structure_counts": {
+    "n_claims_total": 1676,
+    "n_claims_cross_only": 0,
+    "n_claims_projection_only": 53,
+    "n_claims_cross_and_projection": 7,
+    "n_claims_anchored_hall_only": 9,
+    "n_claims_pure_only": 52,
+    "n_claims_evidence_gap": 0,
+    "n_claims_correct_only": 1555,
+    "n_claims_multi_pm_label": 7
+  },
+  "task_correctness_x_binding": {
+    "task_correct__binding_clean_or_correct": 50,
+    "task_correct__phantom_merge": 12,
+    "task_correct__pure_hallucination_only": 7,
+    "task_incorrect__binding_clean_or_correct": 123,
+    "task_incorrect__no_checkable_claims": 2,
+    "task_incorrect__phantom_merge": 33,
+    "task_incorrect__pure_hallucination_only": 22
+  },
+  "n_claims_total": 1676,
+  "judge_errors": 1
+}

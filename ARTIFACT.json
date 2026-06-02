@@ -1,0 +1,74 @@
+{
+  "release": "emnlp2026_phantom_merge_anonymous",
+  "repository": "https://github.com/emnlp2026-phantommerge/PhantomMerge",
+  "protocol_version": {
+    "shopping": "shopping_pm_judge_vNEXT",
+    "fhir": "fhir_pm_judge_vNEXT"
+  },
+  "verify": "bash reproduce/verify.sh",
+  "tables": {
+    "table1": {
+      "counts": "results/table1_characterization/counts.json",
+      "cohort_index": "results/table1_characterization/cohort_index.json",
+      "cohorts": {
+        "shopping_qwen_n249": "results/table1_characterization/shopping_qwen_n249/per_trajectory.jsonl",
+        "shopping_mistral_n250": "results/table1_characterization/shopping_mistral_n250/per_trajectory.jsonl",
+        "fhir_qwen_n973": "results/table1_characterization/fhir_qwen_n973/per_trajectory.jsonl",
+        "fhir_mistral_n847": "results/table1_characterization/fhir_mistral_n847/per_trajectory.jsonl"
+      }
+    },
+    "table2": {
+      "global_support_baseline": "results/table2_global_support/baseline_checker.json"
+    },
+    "table3": {
+      "bcp_detect": "results/table3_representation/bcp_detect.json",
+      "bcp_detect_metrics": "results/table3_representation/bcp_detect_metrics.json",
+      "oc_bcp": "results/table3_representation/oc_bcp.json",
+      "claims_parquet": "results/table3_representation/claims.parquet",
+      "splits": "results/table3_representation/splits.json"
+    },
+    "table4": {
+      "msps_test146": "results/table4_mitigation/msps_test146.json",
+      "gating_curve": "results/table4_mitigation/gating_curve.json",
+      "cb_retention_audit": "results/appendix/mitigation_cb_retention_audit.json",
+      "tau_pm_curve": "results/appendix/mitigation_tau_pm_curve.json"
+    }
+  },
+  "supplemental": {
+    "mitigation_utility_proxy": "results/supplemental/mitigation_utility_proxy.json",
+    "trajectory_decomposition": "results/supplemental/trajectory_decomposition/decomposition.csv",
+    "probe_auxiliary": "results/supplemental/probe_auxiliary/"
+  },
+  "figures": {
+    "appendix_scripts": "figures/appendix/",
+    "data": "results/appendix/manifest.json"
+  },
+  "not_shipped": [
+    "agent_rollouts",
+    "feature_bank_tensors_npy",
+    "human_label_audits",
+    "qualitative_case_trajectories",
+    "excluded_judge_failure_trajectories",
+    "qa_label_auditor_scripts"
+  ],
+  "code": {
+    "binding_shopping": "binding/shopping/",
+    "binding_fhir": "binding/fhir/",
+    "probes": "probes/",
+    "pm_eval_core": "binding/shopping/src/analysis/pm_eval_vnext.py",
+    "validate_p0": "probes/validate_p0.py"
+  },
+  "reproduce": {
+    "index": "reproduce/INDEX.json",
+    "tier0": "reproduce/verify.sh",
+    "table1": "reproduce/table1_characterization.sh",
+    "table3_bcp": "reproduce/table3_bcp_detect.sh",
+    "table3_oc": "reproduce/table3_oc_bcp.sh",
+    "table4": "reproduce/table4_mitigation.sh",
+    "shortcuts": {
+      "diagnosis": "scripts/run_diagnosis.sh",
+      "probe": "scripts/run_probe.sh",
+      "mitigation": "scripts/run_mitigation.sh"
+    }
+  }
+}

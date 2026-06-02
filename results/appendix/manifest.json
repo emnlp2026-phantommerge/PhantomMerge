@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-05-23T22:54:34.518476+00:00",
+  "probe_dir": "results/table3_representation",
+  "out_dir": "results/appendix",
+  "files": [
+    "mitigation_table_extended.csv",
+    "mitigation_table_extended.json",
+    "mitigation_cb_retention_audit.json",
+    "mitigation_random_retention_matched.json",
+    "mitigation_tau_pm_curve.csv",
+    "mitigation_tau_pm_curve.json",
+    "task_pm_heatmap.csv",
+    "fhir_primary_stratum.csv",
+    "fhir_claims_per_trajectory_distribution.csv",
+    "oc_margin_plot.csv",
+    "oc_margin_plot_summary.json",
+    "manifest.json"
+  ],
+  "cb_retention_summary": {
+    "MSPS": {
+      "n_trajectories": 146,
+      "baseline_pm_count": 52,
+      "baseline_pm_rate": 0.3561643835616438,
+      "gated_pm_count": 7,
+      "gated_pm_rate": 0.04794520547945205,
+      "claims_total_baseline": 369,
+      "claims_total_gated": 216,
+      "claims_retained_mean": 1.4794520547945205,
+      "pm_claims_total_baseline": 72,
+      "pm_claims_total_gated": 7,
+      "cb_claims_total_baseline": 187,
+      "cb_claims_retained": 126,
+      "cb_claims_removed": 61,
+      "cb_retention_rate": 0.6737967914438503,
+      "removed_cb_fraction_of_all_removed": 0.39869281045751637,
+      "pm_claims_removed": 65,
+      "non_cb_non_pm_removed": 27
+    },
+    "BCP": {
+      "n_trajectories": 146,
+      "baseline_pm_count": 52,
+      "baseline_pm_rate": 0.3561643835616438,
+      "gated_pm_count": 14,
+      "gated_pm_rate": 0.0958904109589041,
+      "claims_total_baseline": 369,
+      "claims_total_gated": 262,
+      "claims_retained_mean": 1.7945205479452055,
+      "pm_claims_total_baseline": 72,
+      "pm_claims_total_gated": 15,
+      "cb_claims_total_baseline": 187,
+      "cb_claims_retained": 157,
+      "cb_claims_removed": 30,
+      "cb_retention_rate": 0.839572192513369,
+      "removed_cb_fraction_of_all_removed": 0.2803738317757009,
+      "pm_claims_removed": 57,
+      "non_cb_non_pm_removed": 20
+    }
+  }
+}

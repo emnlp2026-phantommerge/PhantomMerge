@@ -1,0 +1,11 @@
+[User Query]
+{query}
+
+[Anchor Evidence]
+{anchor_evidence}
+
+[Other Observed Evidence]
+{other_evidence}
+
+[Claim]
+{claim_text}

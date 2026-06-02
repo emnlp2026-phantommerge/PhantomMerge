@@ -1,0 +1,17 @@
+{
+  "train_fhir": {
+    "n": 369,
+    "pos_rate": 0.1951219512195122,
+    "auroc": 0.9040871679760568
+  },
+  "shopping_ood": {
+    "n": 1676,
+    "pos_rate": 0.04116945107398568,
+    "auroc": 0.567886871747698
+  },
+  "n_ood": 1676,
+  "variant": "full",
+  "pool": "mean",
+  "layer_slot": 2,
+  "label": "y_pm"
+}

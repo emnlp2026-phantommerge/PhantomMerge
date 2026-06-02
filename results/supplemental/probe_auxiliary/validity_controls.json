@@ -1,0 +1,52 @@
+{
+  "probe_dir": "results/table3_representation",
+  "label": "y_pm",
+  "text_col": "bcp_prompt",
+  "n_claims": 2491,
+  "bow_tfidf_lr": {
+    "method": "bow_tfidf_lr",
+    "text_col": "bcp_prompt",
+    "label": "y_pm",
+    "splits": {
+      "train": {
+        "n": 1769,
+        "pos_rate": 0.20293951384963257,
+        "auroc": 0.9883502242241056
+      },
+      "val": {
+        "n": 353,
+        "pos_rate": 0.18413597733711048,
+        "auroc": 0.9427350427350427
+      },
+      "test": {
+        "n": 369,
+        "pos_rate": 0.1951219512195122,
+        "auroc": 0.9449588477366255
+      }
+    }
+  },
+  "modernbert_large": {
+    "method": "modernbert_large_mean_pool",
+    "model": "answerdotai/ModernBERT-large",
+    "device": "cuda",
+    "embedding_dim": 1024,
+    "cache": "results/table3_representation/text_embeddings_answerdotai__ModernBERT-large.npy",
+    "splits": {
+      "train": {
+        "n": 1769,
+        "pos_rate": 0.20293951384963257,
+        "auroc": 0.9933088366028566
+      },
+      "val": {
+        "n": 353,
+        "pos_rate": 0.18413597733711048,
+        "auroc": 0.9238247863247864
+      },
+      "test": {
+        "n": 369,
+        "pos_rate": 0.1951219512195122,
+        "auroc": 0.9443976805087917
+      }
+    }
+  }
+}
