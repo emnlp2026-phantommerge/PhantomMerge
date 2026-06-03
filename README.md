@@ -1,74 +1,110 @@
 # Phantom Merge (EMNLP 2026 — anonymous release)
 
-Code and sealed metrics for [*Phantom Merge: When Your Large Language Model Agents Pick One but Tell You About Another*](paper/Phantom_Merge__emnlp2026_.pdf).
+Code and reference runs for [*Phantom Merge: When Your Large Language Model Agents Pick One but Tell You About Another*](https://github.com/emnlp2026-phantommerge/PhantomMerge).
 
-**Phantom Merge** is a binding failure in multi-step agents: the run commits to a protocol anchor (a ShoppingBench product or FHIR resource) but the final answer attributes to that anchor facts its observed evidence cannot support. Standard task checks may still pass.
+**Phantom Merge** is a binding failure in multi-step agents: the run commits to a protocol anchor (a ShoppingBench product or a FHIR resource) but the final answer attributes to that anchor facts its observed evidence cannot support. Standard task checks may still pass.
 
-This repository ships **precomputed trajectory labels and paper tables** for four cohorts (ShoppingBench and FHIR-AgentBench × Qwen3-32B / Mistral-Small-3.1-24B). It does **not** include agent rollouts, judge API endpoints, or feature-bank hidden-state arrays.
+This artifact implements Phantom-Merge **diagnosis** (anchor–claim labeling) and **mitigation** (BCP-Detect, MSPS) on two agent benchmarks—[ShoppingBench](https://github.com/yjwjy/ShoppingBench) and [FHIR-AgentBench](https://github.com/glee4810/FHIR-AgentBench)—with **Qwen3-32B** and **Mistral-Small-3.1-24B** backbones. Sealed trajectories and paper tables are under `results/`; `binding/` and `probes/` are the code paths to regenerate from fresh rollouts.
 
-**Repository:** [https://github.com/emnlp2026-phantommerge/PhantomMerge](https://github.com/emnlp2026-phantommerge/PhantomMerge)
-
-## Quick check (CPU, ~2 min)
+## Installation
 
 ```bash
+git clone https://github.com/emnlp2026-phantommerge/PhantomMerge.git
+cd PhantomMerge
+git lfs pull
+
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 bash reproduce/verify.sh
 ```
 
-Expected output includes `Release check PASSED`. Paper headline numbers:
+Prints `Release check PASSED` when the sealed snapshot matches the paper. Headline metrics:
 
 ```bash
 python scripts/print_paper_metrics.py
 ```
 
-`reproduce/verify.sh` checks row counts and SHA-256 on the four `per_trajectory.jsonl` files, validates probe manifests (`claims.parquet`, feature-bank index), and compares aggregates to `results/table1_characterization/counts.json`. It does **not** call an LLM judge.
+Index: [`ARTIFACT.json`](ARTIFACT.json).
 
-## Paper numbers → files
+## Agent benchmarks
+
+Rollouts are produced in the upstream repos; this repo consumes rollout logs and runs the PM judge and downstream probes.
+
+### ShoppingBench
+
+- **Upstream:** https://github.com/yjwjy/ShoppingBench  
+- **Paper:** https://arxiv.org/abs/2508.04266  
+- **Cohorts in this release:** `shopping_qwen_n249`, `shopping_mistral_n250`
+
+1. Clone ShoppingBench and follow its environment setup (`./init_env.sh`, product sandbox, API keys as in upstream `README.md`).
+2. Run agent rollouts, e.g. `./run.sh product rollout <model>` (see upstream for shop / voucher / web intents).
+3. Point the PM judge at your rollout JSONL:
+
+```bash
+python binding/shopping/scripts/run_pm_judge.py \
+  --rollout /path/to/shoppingbench/rollout.jsonl \
+  --out-dir runs/shopping_pm_eval_out \
+  --judge-enabled
+```
+
+4. Compare against sealed labels: `results/table1_characterization/shopping_*/per_trajectory.jsonl`, or run `bash reproduce/table1_characterization.sh`.
+
+Details: [`binding/shopping/README.md`](binding/shopping/README.md).
+
+### FHIR-AgentBench
+
+- **Upstream:** https://github.com/glee4810/FHIR-AgentBench  
+- **Paper:** https://arxiv.org/abs/2509.19319  
+- **Cohorts in this release:** `fhir_qwen_n973`, `fhir_mistral_n847`
+
+1. Clone FHIR-AgentBench; create the conda env and install `requirements.txt` per upstream.
+2. Prepare MIMIC-IV-FHIR and run agents with `run_agent.py` (vLLM / tool-use setup as in upstream).
+3. Run the PM judge on agent output JSON:
+
+```bash
+python binding/fhir/scripts/run_pm_judge.py \
+  --rollout /path/to/fhir_agent_output.json \
+  --out-dir runs/fhir_pm_eval_out
+```
+
+4. Sealed reference: `results/table1_characterization/fhir_*/per_trajectory.jsonl`; Table 1 check: `bash reproduce/table1_characterization.sh`.
+
+Details: [`binding/fhir/README.md`](binding/fhir/README.md).
+
+## Reproducing the paper
 
 | Paper | Location |
 |-------|----------|
-| Table 1 — PM prevalence (N = 249 / 250 / 973 / 847) | `results/table1_characterization/counts.json`, `*/per_trajectory.jsonl` |
+| Table 1 — PM prevalence | `results/table1_characterization/counts.json`, `*/per_trajectory.jsonl` |
 | Table 2 — global-support baseline | `results/table2_global_support/baseline_checker.json` |
-| Table 3 — BCP-Detect (FHIR Qwen test AUROC 0.904) | `results/table3_representation/bcp_detect.json`, `claims.parquet` |
-| Table 4 — MSPS (test PM 35.6% → 4.8%) | `results/table4_mitigation/msps_test146.json` |
-| Appendix — τ curves, CB retention audit | `results/appendix/` |
+| Table 3 — BCP-Detect | `results/table3_representation/bcp_detect.json`, `claims.parquet` |
+| Table 4 — MSPS | `results/table4_mitigation/msps_test146.json` |
+| Appendix | `results/appendix/` |
 
-Machine-readable index: [`ARTIFACT.json`](ARTIFACT.json).
-
-## Repository layout
-
-```
-binding/shopping/   PM judge + object KB builder (ShoppingBench)
-binding/fhir/       PM judge (FHIR-AgentBench); shared claim taxonomy
-probes/             BCP / OC-BCP / MSPS training and evaluation code
-results/            Sealed labels and tables (authoritative for the paper)
-reproduce/          verify.sh and optional re-run scripts
-figures/appendix/   Regenerate appendix CSVs/plots (CPU)
-```
-
-## Optional re-runs (GPU; not needed to verify the paper)
-
-Sealed files under `results/` are the reference for published numbers.
+End-to-end scripts (GPU where noted):
 
 ```bash
-bash scripts/run_diagnosis.sh    # Table 1 integrity only (still no judge)
-bash scripts/run_probe.sh        # BCP-Detect pipeline (needs regenerated .npy)
-bash scripts/run_mitigation.sh   # MSPS / gating suite
+bash reproduce/table3_bcp_detect.sh   # Table 3
+bash reproduce/table3_oc_bcp.sh
+bash reproduce/table4_mitigation.sh   # Table 4
 ```
 
-Re-labeling trajectories with `binding/*/scripts/analyze_phantom_merge_*.py` requires the original benchmark rollouts, which are not redistributed here.
+Shortcut wrappers: `scripts/run_probe.sh`, `scripts/run_mitigation.sh`. Feature-bank training for BCP-Detect lives under `probes/`; build tensors from your probe run before re-invoking Table 3 scripts.
+
+## Code layout
+
+```
+binding/shopping/   PM judge + object KB (ShoppingBench)
+binding/fhir/       PM judge (FHIR-AgentBench)
+probes/             BCP-Detect, OC-BCP, MSPS
+results/            Sealed per-trajectory labels and tables
+reproduce/          verify.sh and table-aligned scripts
+figures/appendix/   Appendix figures (CPU)
+```
 
 ## Label protocol
 
-Rows in `per_trajectory.jsonl` carry `pipeline_version`: `shopping_pm_judge_vNEXT` or `fhir_pm_judge_vNEXT`. Claim taxonomy and PM aggregation logic live in `binding/shopping/src/analysis/pm_eval_vnext.py`.
-
-## Not redistributed
-
-- ShoppingBench / FHIR-AgentBench rollouts and upstream benchmark trees
-- Feature-bank tensors (`*.npy`)
-- Human label-audit bundles or qualitative case trajectories
-- 22 FHIR-Mistral trajectories dropped from the sealed cohort (count only in `results/table1_characterization/cohort_index.json`)
+`per_trajectory.jsonl` rows use `pipeline_version` `shopping_pm_judge_vNEXT` or `fhir_pm_judge_vNEXT`. Shared claim taxonomy and aggregation: `binding/shopping/src/analysis/pm_eval_vnext.py`.
 
 ## Citation
 
@@ -81,7 +117,7 @@ Rows in `per_trajectory.jsonl` carry `pipeline_version`: `shopping_pm_judge_vNEX
 }
 ```
 
-See also [`CITATION.bib`](CITATION.bib).
+See [`CITATION.bib`](CITATION.bib).
 
 ## License
 
