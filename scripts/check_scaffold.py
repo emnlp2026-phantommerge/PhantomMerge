@@ -27,7 +27,6 @@ from repo_paths import (
 )
 
 REQUIRED_DIRS = [
-    "paper",
     "scripts",
     "reproduce",
     "binding/shopping",
@@ -50,7 +49,6 @@ REQUIRED_FILES = [
     ".gitignore",
     "ARTIFACT.json",
     "results/MANIFEST.json",
-    "paper/Phantom_Merge__emnlp2026_.pdf",
     str(PAPER_COUNTS.relative_to(REPO_ROOT)),
     str(COHORT_MANIFEST.relative_to(REPO_ROOT)),
     str(SHOPPING_QWEN_PER.relative_to(REPO_ROOT)),
@@ -59,6 +57,8 @@ REQUIRED_FILES = [
     str(MSPS_ULTIMATE.relative_to(REPO_ROOT)),
     str((TABLE3 / "claims.parquet").relative_to(REPO_ROOT)),
     "results/table2_global_support/baseline_checker.json",
+    "results/supplemental/gold_reference_panel/manifest.json",
+    "results/supplemental/gold_reference_panel/claims_100.jsonl",
     str(PM_EVAL_VNEXT.relative_to(REPO_ROOT)),
     str(FHIR_PM_JUDGE.relative_to(REPO_ROOT)),
     str(PROBE_VALIDATE_P0.relative_to(REPO_ROOT)),
@@ -94,6 +94,11 @@ FORBIDDEN_MARKERS = (
     "validity_audit_three_way",
     "Paper-expert",
     "pgcs_v1_judge_failed",
+    "deterministic_flip",
+)
+
+_MARKER_SCAN_SKIP_PREFIXES = (
+    "results/supplemental/gold_reference_panel/",
 )
 
 
@@ -122,6 +127,9 @@ def _grep_forbidden() -> list[str]:
         if path.suffix not in {".py", ".sh", ".md", ".txt", ".json", ".csv"}:
             continue
         if path.name in skip:
+            continue
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        if rel.startswith(_MARKER_SCAN_SKIP_PREFIXES):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for needle in FORBIDDEN_MARKERS:

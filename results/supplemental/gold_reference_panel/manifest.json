@@ -1,0 +1,31 @@
+{
+  "release": "emnlp2026_phantom_merge_anonymous",
+  "panel": "curated_gold_reference_100",
+  "claims_file": "claims_100.jsonl",
+  "n_claims": 100,
+  "domains": {
+    "shopping": 50,
+    "fhir": 50
+  },
+  "granularity": "claim",
+  "fields": [
+    "audit_key",
+    "domain",
+    "trajectory_id",
+    "claim_index",
+    "slot",
+    "value",
+    "response_quote",
+    "v1_primary",
+    "v2_primary",
+    "deterministic_flip_v2",
+    "gold_verdict",
+    "gold_confidence",
+    "pm_binary"
+  ],
+  "notes": [
+    "Curated reference panel for validity auditing (Appendix C).",
+    "v1_primary and v2_primary are sealed pipeline reference labels, not adjudicator outputs.",
+    "No provider, model, API, rationale, or free-text adjudication notes are included."
+  ]
+}

@@ -80,6 +80,7 @@ Details: [`binding/fhir/README.md`](binding/fhir/README.md).
 | Table 3 — BCP-Detect | `results/table3_representation/bcp_detect.json`, `claims.parquet` |
 | Table 4 — MSPS | `results/table4_mitigation/msps_test146.json` |
 | Appendix | `results/appendix/` |
+| Appendix C — curated gold reference panel (100 claims) | `results/supplemental/gold_reference_panel/claims_100.jsonl` |
 
 End-to-end scripts (GPU where noted):
 
@@ -108,16 +109,23 @@ figures/appendix/   Appendix figures (CPU)
 
 ## Citation
 
+This repository accompanies an **anonymous EMNLP 2026 submission**. Do **not** cite it as published proceedings. Use the anonymous artifact entry until the paper is accepted and de-anonymized:
+
 ```bibtex
-@inproceedings{phantommerge2026,
-  title     = {Phantom Merge: When Your Large Language Model Agents Pick One but Tell You About Another},
-  author    = {Anonymous},
-  booktitle = {Proceedings of EMNLP},
-  year      = {2026},
+@misc{phantommerge2026anon,
+  title        = {Phantom Merge: When Your Large Language Model Agents Pick One but Tell You About Another},
+  author       = {Anonymous},
+  year         = {2026},
+  howpublished = {Anonymous artifact under review},
+  note         = {Under review at EMNLP 2026. Anonymous code release: \url{https://github.com/emnlp2026-phantommerge/PhantomMerge}}
 }
 ```
 
 See [`CITATION.bib`](CITATION.bib).
+
+## Curated gold reference panel
+
+`results/supplemental/gold_reference_panel/claims_100.jsonl` ships **100 claim-level reference labels** (50 Shopping + 50 FHIR) for validity auditing (paper Appendix C). Each row has 13 fields: claim identity, response quote, sealed pipeline reference labels (`v1_primary`, `v2_primary`), and curated `gold_verdict` / `gold_confidence` / `pm_binary`. **No** provider, model, API payload, or free-text adjudication rationale is included. Schema: [`manifest.json`](results/supplemental/gold_reference_panel/manifest.json).
 
 ## License
 

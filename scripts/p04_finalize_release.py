@@ -106,12 +106,16 @@ def update_artifact_not_shipped() -> None:
     extra = [
         "agent_rollouts",
         "feature_bank_tensors_npy",
-        "human_label_audits",
         "qualitative_case_trajectories",
         "excluded_judge_failure_trajectories",
         "qa_label_auditor_scripts",
     ]
     data["not_shipped"] = extra
+    supplemental = data.setdefault("supplemental", {})
+    supplemental["gold_reference_panel"] = {
+        "manifest": "results/supplemental/gold_reference_panel/manifest.json",
+        "claims": "results/supplemental/gold_reference_panel/claims_100.jsonl",
+    }
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     print("UPDATED ARTIFACT.json not_shipped")
 

@@ -23,6 +23,11 @@ FORBIDDEN_MARKERS = (
     "deterministic_flip",
 )
 
+# Shipped curated panel intentionally includes pipeline flip metadata.
+_MARKER_SCAN_SKIP_PREFIXES = (
+    "results/supplemental/gold_reference_panel/",
+)
+
 DELETE_PATHS = [
     "results/analysis/validity_audit_summary.json",
     "results/analysis/validity_audit_three_way.json",
@@ -155,6 +160,9 @@ def _scan_forbidden() -> list[str]:
         if not path.is_file():
             continue
         if any(p in skip_dirs for p in path.parts):
+            continue
+        rel = path.relative_to(REPO).as_posix()
+        if rel.startswith(_MARKER_SCAN_SKIP_PREFIXES):
             continue
         if path.suffix not in {".json", ".py", ".sh", ".txt", ".md", ".csv"}:
             continue

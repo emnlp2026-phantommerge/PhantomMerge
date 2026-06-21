@@ -209,6 +209,10 @@ def write_artifact_json() -> None:
             "mitigation_utility_proxy": "results/supplemental/mitigation_utility_proxy.json",
             "trajectory_decomposition": "results/supplemental/trajectory_decomposition/decomposition.csv",
             "probe_auxiliary": "results/supplemental/probe_auxiliary/",
+            "gold_reference_panel": {
+                "manifest": "results/supplemental/gold_reference_panel/manifest.json",
+                "claims": "results/supplemental/gold_reference_panel/claims_100.jsonl",
+            },
         },
         "figures": {
             "appendix_scripts": "figures/appendix/",
@@ -217,7 +221,6 @@ def write_artifact_json() -> None:
         "not_shipped": [
             "agent_rollouts",
             "feature_bank_tensors_npy",
-            "human_label_audits",
             "qualitative_case_trajectories",
             "excluded_judge_failure_trajectories",
         ],
